@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * menu
+ *
+ * @copyright Copyright © 2021 Vasan. All rights reserved.
+ * @author    survasp@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vasan_Base::menu" title="Vasan" translate="title"
+             module="Vasan_Base" sortOrder="69" resource="Vasan_Base::menu"/>
+        <add action="adminhtml/system_config/edit/section/vasanbase"
+             id="Vasan_Base::config_menu" module="Vasan_Base"
+             parent="Vasan_Base::menu" resource="Vasan_Base::config_menu" sortOrder="99999" title="Vasan Module Configurations"/>
+
+    </menu>
+</config>

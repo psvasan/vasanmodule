@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * routes
+ *
+ * @copyright Copyright © 2023 Kemana. All rights reserved.
+ * @author    psureshvasan@kemana.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin"> <!-- standard or admin -->
+        <route id="experimentone" frontName="experimentone">
+            <module name="Vasan_ExperimentOne" />
+        </route>
+    </router>
+</config>

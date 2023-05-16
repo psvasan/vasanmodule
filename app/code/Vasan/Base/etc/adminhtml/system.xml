@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * system
+ *
+ * @copyright Copyright © 2023 Kemana. All rights reserved.
+ * @author    psureshvasan@kemana.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="vasan" sortOrder="50">
+            <label>Vasan</label>
+        </tab>
+        <section id="vasanbase" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="99999" translate="label">
+            <label>Admin Settings</label>
+            <tab>vasan</tab>
+            <resource>Vasan_Base::config_menu</resource>
+            <group id="general" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label">
+                <field id="debug_mode" translate="label" type="select" sortOrder="53" showInDefault="1" showInWebsite="1"
+                       showInStore="0" canRestore="1">
+                    <label><![CDATA[Debug Mode]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

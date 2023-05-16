@@ -1,0 +1,27 @@
+{
+    "name": "Vasan/Base",
+    "description": "Vasan base module",
+    "require": {
+        "php": "~7.2.0||~7.3.0||~7.4.0"
+    },
+    "minimum-stability": "stable",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "authors": [
+        {
+            "name": "P.Sureshvasan",
+            "email": "survasp@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Vasan\\Base\\": ""
+        }
+    }
+}

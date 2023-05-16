@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * di
+ *
+ * @copyright Copyright © 2023 Kemana. All rights reserved.
+ * @author    psureshvasan@kemana.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Logger definitions -->
+    <virtualType name="LogHandler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/vasan.log</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="VasanLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">LogHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Vasan\Base\Model\LoggerService">
+        <arguments>
+            <argument name="logger" xsi:type="object">VasanLogger</argument>
+        </arguments>
+    </type>
+    <!-- Logger definitions -->
+</config>
