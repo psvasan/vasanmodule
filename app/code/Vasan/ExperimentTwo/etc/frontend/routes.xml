@@ -8,9 +8,9 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="admin"> <!-- standard or admin -->
-        <route id="experimentone" frontName="experimentone">
-            <module name="Vasan_ExperimentOne" />
+    <router id="standard"> <!-- standard or admin -->
+        <route id="experimenttwo" frontName="experimenttwo">
+            <module name="Vasan_ExperimentTwo" />
         </route>
     </router>
 </config>
