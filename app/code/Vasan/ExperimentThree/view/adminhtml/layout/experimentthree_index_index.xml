@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * experimentthree_index_index
+ *
+ * @copyright Copyright © 2023 Kemana. All rights reserved.
+ * @author    psureshvasan@kemana.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Manage StoreLocator</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="storelocator_listing"/>
+        </referenceContainer>
+    </body>
+</page>

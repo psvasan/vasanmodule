@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * menu
+ *
+ * @copyright Copyright © 2023 Kemana. All rights reserved.
+ * @author    psureshvasan@kemana.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!-- If you remove the parent="Vasan_Base::menu" , this will be added as one of the root menu-->
+        <add
+            id="Vasan_ExperimentThree::manager"
+            title="Experiment Three Manager"
+            module="Vasan_ExperimentThree"
+            sortOrder="13"
+            parent="Vasan_Base::menu"
+            resource="Vasan_ExperimentThree::manager" />
+
+        <add
+            id="Vasan_ExperimentThree::stores"
+            title="Experiment Three Stores"
+            module="Vasan_ExperimentThree"
+            sortOrder="14"
+            parent="Vasan_ExperimentThree::manager"
+            action="experimentthree/index/index"
+            resource="Vasan_ExperimentThree::stores" />
+    </menu>
+</config>

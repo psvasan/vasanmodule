@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * notification_listing
+ *
+ * @copyright Copyright © 2023 Kemana. All rights reserved.
+ * @author    psureshvasan@kemana.com
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">storelocator_listing.storelocator_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New StoreLocator</label>
+            </button>
+        </buttons>
+        <spinner>storelocator_columns</spinner>
+        <deps>
+            <dep>storelocator_listing.storelocator_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="storelocator_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <filterUrlParams>
+                <param name="id">*</param>
+            </filterUrlParams>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="storelocator_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <columnsControls name="columns_controls"/>
+
+        <filters name="listing_filters"/>
+
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="storelocator_columns">
+
+        <selectionsColumn name="ids" sortOrder="10">
+            <settings>
+                <indexField>id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="id" sortOrder="15">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Id</label>
+            </settings>
+        </column>
+
+
+        <column name="name" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+
+        <column name="desc" sortOrder="25">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description</label>
+            </settings>
+        </column>
+
+        <column name="lat" sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Latitude</label>
+            </settings>
+        </column>
+
+        <column name="lon" sortOrder="35">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Longitude</label>
+            </settings>
+        </column>
+
+        <actionsColumn name="actions" class="Vasan\ExperimentThree\Ui\Component\Listing\StoreLocator\Column\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

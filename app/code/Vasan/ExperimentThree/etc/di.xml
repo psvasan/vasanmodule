@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * di
+ *
+ * @copyright Copyright © 2023 Kemana. All rights reserved.
+ * @author    psureshvasan@kemana.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Vasan\ExperimentThree\Api\StoreLocatorRepositoryInterface" type="Vasan\ExperimentThree\Model\StoreLocatorRepository" />
+    <preference for="Vasan\ExperimentThree\Api\Data\StoreLocatorInterface" type="Vasan\ExperimentThree\Model\StoreLocator" />
+    <preference for="Vasan\ExperimentThree\Api\Data\StoreLocatorSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+
+
+    <!-- StoreLocator listing definitions -->
+
+    <virtualType name="Vasan\ExperimentThree\Model\ResourceModel\StoreLocator\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">vasan_storelocator</argument>
+            <argument name="resourceModel" xsi:type="string">Vasan\ExperimentThree\Model\ResourceModel\StoreLocator</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="storelocator_listing_data_source" xsi:type="string">Vasan\ExperimentThree\Model\ResourceModel\StoreLocator\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- StoreLocator listing definitions -->
+</config>

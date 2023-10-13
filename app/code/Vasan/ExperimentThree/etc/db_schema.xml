@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * db_schema.xml
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="vasan_storelocator" resource="default" engine="innodb" comment="StoreLocator">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="int" name="lat" unsigned="true" nullable="false" default="0"  comment="Latitude"/>
+        <column xsi:type="int" name="lon" unsigned="true" nullable="false" default="0"  comment="Longitude"/>
+        <column xsi:type="varchar" name="name"  nullable="false" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="desc"  nullable="false" length="255" comment="Description"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Date"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Modification Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
+
